@@ -81,7 +81,7 @@ python spitCountryCode.py all
 
 Country name or keyword to put is case-insensitive.
 
-To find out more about Postman Covid19 Api, [visit COVID19 API Pages](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest).
-
 ## Requirements
-This python script uses [requests module](https://requests.readthedocs.io/en/master/). Use ```pip install requests``` in your local or virtual environment, or simply run ```pip install -r requirements.txt``` to install all the dependencies written in ```requirement.txt```.
+This python script uses [requests module](https://requests.readthedocs.io/en/master/). Before running the script, run ```pip install requests``` in your local or virtual environment, or simply run ```pip install -r requirements.txt``` to install all the dependencies written in ```requirement.txt```.
+
+To find out more about Postman Covid19 Api, [visit COVID19 API Pages](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest).
