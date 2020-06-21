@@ -1,0 +1,38 @@
+# get covid-19 data from postman api
+# https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest
+
+import requests, sys
+from datetime import datetime
+
+url = 'https://api.covid19api.com/summary'
+r = requests.get(url)
+data = r.json()
+countries = r.json().['Countries']
+countryCodes = sys.argv[1:]
+
+if len(sys.argv) < 2:
+    print('Usage: python coronaSummary.py COUNTRYCODE#1 COUNTRYCODE#2 ...')
+    print('For world data, run python coronaSummary.py world')
+    sys.exit()
+
+if sys.argv[1].lower() == 'world':
+    dataGlobal = data['Global']
+    cases = dataGlobal['TotalConfirmed']
+    date = datetime.now().strftime('%m/%d')
+    deaths = dataGlobal['TotalDeaths']
+    print(f"\nWorld Data {date}\nCases: {cases:,}\nDeaths: {deaths:,}\nDeath Rate: {round(deaths/cases, 4)*100}%")
+
+for country in countries:
+    countryName = country['Country']
+    cases = country['TotalConfirmed']
+    deaths = country['TotalDeaths']
+    date = country['Date']
+    d = datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
+    newDate = d.strftime('%m/%d')
+
+    # iterate each code
+    for eachCode in countryCodes:
+        eachCode = eachCode.lower()
+        if country['CountryCode'].lower() == eachCode:
+            print(f'\n{countryName} {newDate}\nCases: {cases:,}\nDeaths: {deaths:,}\nDeath Rate: {round(deaths/cases, 4)*100}%')
+
