@@ -20,9 +20,9 @@ if len(sys.argv) < 2:
     sys.exit()
 
 if sys.argv[1] == 'all':
+    print()
     pprint.pprint(countryDict)
     sys.exit()
-
 try:
     print(userInput + ' : '+ countryDict[userInput])
 except KeyError:
@@ -35,5 +35,5 @@ except KeyError:
         print('Did you mean...')
         pprint.pprint(results)
     else:
-        print('Not Found')
+        print('\nNot Found')
 
