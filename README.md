@@ -43,7 +43,7 @@ Deaths: 107 New Deaths: 0
 Death Rate: 4.65%
 ```
 
-Country code to put is case insensitive.
+Country code to put is case-insensitive.
 
 ### 2. Get country code
 Not sure about country code? No problem. Simply run ```python spitCountryCode.py COUNTRY NAME```. Country name doesn't have to be exactly the same. One keyword should do the work. For example, run ```python spitCountryCode.py united```, and you will see something like this:
@@ -79,6 +79,9 @@ python spitCountryCode.py all
 ...
 ```
 
-Country name or keyword to put is case insensitive.
+Country name or keyword to put is case-insensitive.
 
 To find out more about Postman Covid19 Api, [visit COVID19 API Pages](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest).
+
+## Requirements
+This python script uses [requests module](https://requests.readthedocs.io/en/master/). Use ```pip install requests``` in your local or virtual environment, or simply run ```pip install -r requirements.txt``` to install all the dependencies written in ```requirement.txt```.
